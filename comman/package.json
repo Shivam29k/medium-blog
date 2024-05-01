@@ -1,0 +1,14 @@
+{
+  "name": "@shivamkrandom/medium",
+  "version": "1.0.5",
+  "description": "This npm modeule is made for the purpose for type inferce in medium project so both backend and frontend can use it efficiently.",
+  "main": "dist/index.js",
+  "dependencies": {
+    "zod": "^3.23.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
