@@ -62,7 +62,7 @@ function Auth({ type }: { type: "signup" | "signin" }) {
       <div className="flex justify-center  flex-col gap-5  p-6 px-3 sm:px-6">
         <div className="flex items-center  w-full gap-2 border rounded-full p-2 bg-slate-200">
           <a
-            className="bg-slate-200 rounded-full h-10 w-10 flex items-center justify-center   hover:shadow-md hover:scale-105 "
+            className="bg-slate-200 rounded-full h-10 w-10 flex items-center justify-center   hover:shadow-md hover:scale-105 cursor-pointer"
             onClick={() => navigate("/")}
           >
             <FaHome className="" size={25} />
@@ -130,7 +130,7 @@ function Auth({ type }: { type: "signup" | "signin" }) {
             : "Don't have an account ?"}{" "}
           <a
             onClick={()=>navigate(type == "signup" ? "/signin" : "/signup")}
-            className="text-blue-500 underline hover:text-blue-700 transition-all font-medium"
+            className="text-blue-500 underline hover:text-blue-700 transition-all font-medium cursor-pointer"
           >
             {type == "signup" ? "Sign in" : "Sign up"}
           </a>
