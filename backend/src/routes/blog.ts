@@ -98,7 +98,12 @@ blogRouter.get("/bulk", async (c) => {
     datasourceUrl: c.env.DATABASE_URL,
   }).$extends(withAccelerate());
 
+  const page = Number(c.req.query('page')) || 0;
+  const limit = 3;
+
   const blogs = await prisma.blog.findMany({
+    take: limit,
+    skip: page * limit,
     select: {
       id: true,
       title: true,

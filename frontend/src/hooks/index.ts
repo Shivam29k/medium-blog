@@ -3,7 +3,7 @@ import { BACKEND_URL } from "@/config";
 import axios from "axios";
 import { coustomAlert } from "@/components/coustomAlert";
 
-export const useBlogs = () => {
+export const useBlogs = ({ page }: { page: Number }) => {
   interface Blog {
     id: string;
     title: string;
@@ -20,7 +20,7 @@ export const useBlogs = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`${BACKEND_URL}/api/v1/blog/bulk`, {
+      .get(`${BACKEND_URL}/api/v1/blog/bulk?page=${page}`, {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
         },
@@ -39,7 +39,7 @@ export const useBlogs = () => {
   return { blogs, loading };
 };
 
-export const getBlog = ({id}: {id : string}) => {
+export const getBlog = ({ id }: { id: string }) => {
   interface Blog {
     id: string;
     title: string;
@@ -77,8 +77,11 @@ export const getBlog = ({id}: {id : string}) => {
   return { blog, loading };
 };
 
-
 export const getDateString = (date: Date) => {
   const d = new Date(date);
-  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-}
+  return d.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+};
