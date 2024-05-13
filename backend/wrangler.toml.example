@@ -1,0 +1,11 @@
+name = "backend"
+compatibility_date = "2023-12-01"
+
+
+[vars]
+
+DATABASE_URL="enter your prisma accelerate URL for database pooling"
+JWT_SECRET="jwt-secret"
+
+
+# remove .example from the file name

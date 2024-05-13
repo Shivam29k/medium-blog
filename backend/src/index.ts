@@ -8,7 +8,14 @@ import { userRouter } from "./routes/user";
 
 
 const app = new Hono()
-app.use('/*', cors())
+app.use(
+    '/*',
+    cors({
+      origin: ['https://blog.shivamk.tech'],
+    })
+  )
+  
+  
 app.route("/api/v1/user", userRouter);
 app.route("/api/v1/blog", blogRouter);
 app.get("/", async (c) => {
