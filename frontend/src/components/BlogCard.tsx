@@ -59,7 +59,7 @@ function BlogCard({
 
 function BlogCardSkeleton() {
   return (
-    <div className="border-b-2 flex flex-col gap-2 w-full py-8 m-4">
+    <div className="border-b-2 flex flex-col gap-2 w-full py-8 m-4 container">
       <div className="flex flex-col gap-4">
         <div className="flex w-full items-center gap-4">
           <div className="h-6 w-6 bg-slate-300 rounded-full animate-pulse"></div>
